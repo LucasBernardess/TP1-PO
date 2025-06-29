@@ -46,30 +46,30 @@ O arquivo de entrada deve ser um arquivo de texto `.txt` com a seguinte estrutur
 
 Considere o seguinte PPL:
 
-**Maximizar Z = 5x₁ + 4x₂**
+**Maximizar Z = 3x₁ + 6x₂**
 
 **Sujeito a:**
 
-* 6x₁ + 4x₂ ≤ 24
-* x₁ + 2x₂ ≤ 6
-* -x₁ + x₂ ≤ 1
-* x₂ ≤ 2
+* x₁ + x₃ = 4 
+* 2x₂ + x₄ = 6 
 
-O arquivo de entrada `exemplo.txt` correspondente a este modelo seria:
+O arquivo de entrada `exemplo_otimo.txt` correspondente a este modelo seria:
 
 ```
-5 4
-6 4 <= 24
-1 2 <= 6
--1 1 <= 1
-0 1 <= 2
+3 6 0 0
+1 0 1 0 <= 4
+1 0 1 0 >= 4
+0 2 0 1 <= 6
+0 2 0 1 >= 6
 ```
 
-Ao executar o comando `python main.py exemplo.txt`, o programa exibirá as iterações do tableau Simplex e, ao final, a solução ótima esperada:
+Ao executar o comando `python main.py exemplo_otimo.txt`, o programa exibirá as iterações do tableau Simplex e, ao final, a solução ótima esperada:
 
 ```
 --- SOLUÇÃO ÓTIMA ---
-x1 = 3.0000
-x2 = 1.5000
-Z = 21.0000
+x1 = 4.0000
+x2 = 3.0000
+x3 = 0.0000
+x4 = 0.0000
+Z = 30.0000
 ```
